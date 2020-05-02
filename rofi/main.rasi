@@ -1,0 +1,76 @@
+configuration {
+  show-icons: true;
+  icon-theme: "Papirus";
+  font: "SauceCodePro Nerd Font Medium 11";
+  drun-display-format: "{icon} {name}";
+  display-run: " ";
+  display-drun: " ";
+  display-window: " ";
+}
+
+* {
+
+    normal-background: @background;
+    urgent-background: #6E2C25;
+    urgent-foreground: @foreground;
+
+    background-color: @background;
+    background: #737887;
+    foreground: #05060E;
+    border-color: @background;
+  bg: #8B8F99;
+  bg-alt: @background;
+  fg: @foreground;
+  fg-alt: #05060E;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  spacing: 0;
+}
+
+window {
+  height: 603px;
+  width: 350px;
+  location: northwest;
+  anchor: northwest;
+  y-offset: 27;
+  transparency: "real";
+
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+
+listview {
+  columns: 1;
+}
+
+element {
+  orientation: vertical;
+  padding: 12 12 12 8;
+  text-color: @fg;
+  font: "SauceCodePro Nerd Font Medium 10";
+}
+
+element selected {
+  background-color: @bg;
+  text-color: @fg-alt;
+}
+
+inputbar {
+  background-color: @background;
+  children: [prompt, entry];
+}
+
+prompt {
+  enabled: true;
+  text-color: @fg-alt;
+  padding: 12 0 0 8;
+  font: "SauceCodePro Nerd Font Bold 12";
+}
+
+entry {
+  text-color: @fg;
+  padding: 12;
+}
