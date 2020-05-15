@@ -17,7 +17,7 @@
 ;==========================================================
 
 [colors]
-background = #aa000000
+background = #0000
 background-alt = ${xrdb:color:#222}
 foreground = ${xrdb:color7:#222}
 foreground-alt = ${xrdb:color7:#222}
@@ -274,7 +274,7 @@ interval = 3.0
 format-prefix-foreground = ${colors.foreground-alt}
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = ${colors.primary}
-label-connected = %{A1:nm-connection-editor:}%essid%%{A}
+label-connected = %{A1:termite -e nmtui &:}%essid%%{A}
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>

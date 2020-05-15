@@ -12,6 +12,8 @@ super + alt + r
 # Emulador de terminal
 super + Return
 	alacritty
+super + F6
+	termite -e nmtui 
 
 
 # Rofi 
@@ -44,6 +46,11 @@ super + F4
 	telegram-desktop
 
 
+# whatsapp
+super + F5
+	whatsapp-nativefier-dark
+
+
 # Screenshot
 Print
 	flameshot full -p /home/iurimega13/Imagens/Screenshots/
@@ -64,7 +71,7 @@ super + Escape
 
 # Fechar Janela
 super + shift + q
-	bspc node -{c,k}
+	bspc node -{k}
 	
 # Volume
 XF86AudioRaiseVolume
