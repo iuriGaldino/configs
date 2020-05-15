@@ -1,0 +1,93 @@
+* {
+    active-background: #5A1D91;
+    active-foreground: @foreground;
+    normal-background: @background;
+    normal-foreground: @foreground;
+    urgent-background: #142399;
+    urgent-foreground: @foreground;
+
+    alternate-active-background: @background;
+    alternate-active-foreground: @foreground;
+    alternate-normal-background: @background;
+    alternate-normal-foreground: @foreground;
+    alternate-urgent-background: @background;
+    alternate-urgent-foreground: @foreground;
+
+    selected-active-background: #142399;
+    selected-active-foreground: @foreground;
+    selected-normal-background: #5A1D91;
+    selected-normal-foreground: @foreground;
+    selected-urgent-background: #1F3DD9;
+    selected-urgent-foreground: @foreground;
+
+    background-color: @background;
+    background: #030314;
+    foreground: #dac9ed;
+    border-color: @foreground;
+    spacing: 2;
+    width: 512px;
+    font: "Cascadia Code Bold 10";
+}
+
+message {
+    border: 2px 0px 0px;
+    border-color: @border-color;
+    padding: 1px;
+}
+
+textbox {
+    background-color: #2e343f;
+    border: 0 0 1px 0;
+    border-color: @border-color;
+    padding: 8px 16px;
+}
+
+inputbar {
+  border: 0 0 1px 0;
+  children: [entry];
+}
+
+listview {
+    cycle: false;
+    margin: 0 0 -1px 0;
+    scrollbar: false;
+}
+
+element {
+  border: 0 0 1px 0;
+  padding: 16px;
+}
+
+#element.normal.normal {
+    background-color: @normal-background;
+    text-color: @normal-foreground;
+}
+
+#element.normal.urgent {
+    background-color: @urgent-background;
+    text-color: @urgent-foreground;
+}
+
+#element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color: @selected-normal-foreground;
+}
+
+#element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color: @alternate-normal-foreground;
+}
+
+entry {
+  padding: 16px;
+  text-color: @foreground;
+
+}
+
+prompt {
+  padding: 16px;
+  border: 0 1px 0 0;
+  text-color: @foreground;
+
+}
+
