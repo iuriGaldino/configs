@@ -13,21 +13,21 @@ bspc config focus_follows_pointer true
 
 
 #--------------------------------Window Rules-------------------------------
-bspc rule -a Google-chrome desktop='^1' follow=on
-bspc rule -a qutebrowser desktop='^1' follow=on
+bspc rule -a Brave-browser desktop='^1' follow=on
 bspc rule -a Alacritty desktop='^2' follow=on
 bspc rule -a Subl3 desktop='^3' follow=on
-bspc rule -a Code desktop='^3' follow=on
+bspc rule -a VSCodium desktop='^3' follow=on
 bspc rule -a Nemo desktop='^4' follow=on
 bspc rule -a TelegramDesktop desktop='^5' follow=on
 bspc rule -a Whatsapp-nativefier-dark desktop='^5' follow=on state=floating
-bspc rule -a Deezer desktop='^6' follow=on
-bspc rule -a Oomox desktop='^7' follow=on
+bspc rule -a Audacious desktop='^6' follow=on
+bspc rule -a vlc desktop='^7' follow=on
+bspc rule -a Oomox desktop='^8' follow=on
 bspc rule -a Gimp desktop='^8' follow=on
 bspc rule -a Inkscape desktop='^8' follow=on
 bspc rule -a Steam desktop='^9' follow=on
+bspc rule -a PokeMMO desktop='^9' follow=on
 bspc rule -a Lutris desktop='^9' follow=on
-bspc rule -a epicgameslauncher.exe desktop='^9' follow=on
 bspc rule -a Termite state=floating rectangle=400x230+957+30
 bspc rule -a Oblogout state=fullscreen 
 bspc rule -a Pavucontrol state=floating
@@ -37,10 +37,10 @@ bspc rule -a Pavucontrol state=floating
 #-------------------------------Inicialização-------------------------------
 compton &
 xfce4-power-manager &
-numlockx on &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 ~/.config/polybar/launch.sh &
 flameshot &
 wal -R &
+#audacious -m &
 #---------------------------------------------------------------------------
