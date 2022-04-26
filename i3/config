@@ -1,18 +1,18 @@
-set $mod Mod1
+set $mod Mod4
 
-font pango:monospace 8
+font cascadia-code:mono 8
 #font pango:DejaVu Sans Mono 8
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
-exec --no-startup-id polybar example
-exec --no-startup-id optimus-manager-qt
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/scripts/pywal.sh ~/wallpapers
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 exec --no-startup-id numlockx on
-exec --no-startup-id compton
+exec --no-startup-id picom
 exec --no-startup-id wal -R
-exec --no-startup-id feh --bg-fill ~/Downloads/20898.jpg
+#exec --no-startup-id feh --bg-fill ~/Downloads/20898.jpg
 
 ## Window Rules
 # Espaçamento entre janelas
@@ -30,11 +30,11 @@ for_window [class=".*"] focus
 for_window [class="Oblogout"] fullscreen
 
 # Assign de Workspaces
-assign [class="Google-chrome|Firefox|Opera"] 1
-assign [class="Termite"] 2
-assign [class="Nemo|Thunar|Ranger|Polo-gtk"] 4
-assign [class="TelegramDesktop|Whatsie"] 5
-assign [class="Subl3|Vim|Code|Apache NetBeans 11.1|sun-awt-X11-XFramePeer|Mysql-workbench-bin"] 3
+assign [class="Google-chrome-unstable"] 1
+assign [class="Alacritty"] 2
+assign [class="Subl|Vim|Code"] 3
+assign [class="Nemo"] 4
+assign [class="TelegramDesktop"] 5
 assign [class="vlc|NCMPCPP|Cava|Spotify"] 6
 assign [class="Gimp.bin|krita"] 7
 
@@ -90,7 +90,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+q layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -145,7 +145,6 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-bindsym $mod+Control+r exec pkill -USR1 -x polybar
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
@@ -184,17 +183,16 @@ bindsym $mod+r mode "resize"
 
 # Comandos
  # Screenshots
-bindsym Print exec flameshot full -p /home/iurimega13/Pictures/Screenshots/
-bindsym Shift+Print exec flameshot gui -p /home/iurimega13/Pictures/Screenshots/
-bindsym Ctrl+Print exec flameshot full -d 3000 -p /home/iurimega13/Pictures/Screenshots/
- # Reiniciar a polybar
-bindsym $mod+F1 exec pkill -USR1 -x polybar
+bindsym Print exec flameshot full -p ~/Imagens/Screenshots/
+bindsym Shift+Print exec flameshot gui -p ~/Imagens/Screenshots/
+bindsym Ctrl+Print exec flameshot full -d 3000 -p ~/Imagens/Screenshots/
+ 
  # Oblogout
 bindsym $mod+Delete exec oblogout
  # Nemo
-bindsym $mod+F3 exec nemo
- # Termite
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+e exec nemo
+ # Alacritty
+bindsym $mod+Return exec alacritty
  # Chrome
 bindsym $mod+F2 exec google-chrome-stable
  # Telegram
