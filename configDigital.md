@@ -33,16 +33,17 @@ Agora edite o arquivo de autenticação PAM:
 sudo nano /etc/pam.d/sudo
 ```
 
-Adicione esta linha **no topo** do arquivo:
+Adicione estas linhas **no topo** do arquivo:
 
 ```
-auth       sufficient   pam_fprintd.so
+auth       sufficient   pam_fprintd.so max_tries=3
+auth       required     pam_unix.so try_first_pass
 ```
 
 **Salvar e sair:**
 - **CTRL + X**, **Y**, **Enter**
 
-Isso faz com que o sudo aceite **impressão digital** sem pedir senha.
+Isso faz com que o sudo aceite **impressão digital**, permitindo **três tentativas** antes de pedir a senha.
 
 ---
 
@@ -53,16 +54,7 @@ Agora, execute:
 sudo -i
 ```
 
-O terminal **pedirá a digital** em vez da senha!
-
-Se quiser voltar a pedir senha depois da digital, use esta linha no `/etc/pam.d/sudo`:
-
-```
-auth       required   pam_unix.so try_first_pass
-auth       sufficient pam_fprintd.so
-```
-
-Dessa forma, **se a digital falhar, ele pedirá a senha normalmente**.
+O terminal **pedirá a digital** até três vezes. Se falhar, solicitará a senha normalmente.
 
 ---
 
